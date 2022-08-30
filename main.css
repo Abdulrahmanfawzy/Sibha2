@@ -1,0 +1,256 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    direction: rtl;
+    background: #20203a;
+}
+:root{
+    --main-color: rgb(51, 51, 107);
+}
+.container{
+    width: 60%;
+    margin: 0px auto 0px auto;
+}
+.container .all_count{
+    text-align: center;
+    background: var(--main-color);
+    color: #FFF;
+    padding: 20px;
+    width: 100%;
+    margin: 0px auto 20px auto;
+    font-size: 19px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.count_flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.big_count{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.count_words{
+    width: 32%;
+}
+.big_count .count_numbers{
+    width: 32%;
+}
+.count_words li{
+    height: 92px;
+    background: var(--main-color);
+    color: #FFf;
+    margin-bottom: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+    position: relative;
+    
+}
+.count_words .sty{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+
+.count_numbers li{
+    height: 92px;
+    background: var(--main-color);
+    color: #FFf;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 17px;
+    width: 100%;
+    position: relative;
+}
+.count_numbers .sty{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+.count_numbers div{
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 3px;
+}
+.all_numbers{
+    background: var(--main-color);
+    color: #FFF;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+}
+.delete_all{
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+#btn{
+    color: #FFF;
+    background: var(--main-color);
+    padding: 13px 23px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    width: 100%;
+}
+#btn:hover{
+    background: rgb(82, 82, 148);
+}
+
+/* ---------------------------------------------------- */
+
+.big_alert{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff80;
+    z-index: 1;
+    color: #FFF;
+    display: none;
+    animation: disAlert .5s ease-in-out;
+}
+
+.content{
+    text-align: center;
+    width: 480px;
+    padding: 50px 50px;
+    background: var(--main-color);
+    border-radius: 5px;
+}
+.accept_div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+.accept_div button{
+    background: rgb(90, 90, 223);
+    padding: 10px 25px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFF;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.accept_div .accept{
+    background: #1a9e85;
+}
+.accept_div .reject{
+    background: #a2021f;
+}
+.accept_div .accept:hover{
+    background: #09947b;
+}
+.accept_div .reject:hover{
+    background: #e6193e;
+}
+
+.big_alert.active{
+    animation: Alertreject .5s ease-in-out;
+}
+
+@keyframes disAlert {
+    0%{
+        display: none;
+        opacity: 0;
+    }
+    100%{
+        display: flex;
+        opacity: 1;
+    }
+}
+
+@media(max-width: 768px){
+    .container{
+        width: 80%;
+    }
+}
+@media(max-width: 576px){
+    .container{
+        width: 90%;
+    }
+    .content{
+        width: 80%;
+        padding: 30px 20px;
+    }
+    .content h2{
+        font-size: 18px;
+    }
+    .accept_div button {
+        padding: 7px 22px;
+        font-size: 15px;
+    }
+    .all_count{
+        padding: 15px 10px;
+    }
+    .all_count p{
+        font-size: 16px;
+    }
+    .all_count section{
+        font-size: 16px;
+        margin-top: 3px;
+    }
+    
+    .count_numbers li {
+        margin-bottom: 12px;
+        font-size: 15px;
+        height: 95px;
+    }
+    .count_words li {
+        margin-bottom: 12px;
+        font-size: 14px;
+        height: 95px;
+    }
+    .accept_div{
+        margin-top: 50px;
+    }
+    
+}
+
+@media(max-width: 350px){
+    .count_words .sty{
+        font-size: 14px;
+    }
+    .count_numbers section,
+    .count_numbers div{
+        font-size: 12px;
+    }
+    #btn{
+        font-size: 14px;
+    }
+    .all_numbers{
+        font-size: 14px;
+    }
+    .count_numbers li{
+        height: 90px;
+    }
+    .count_words li{
+        height: 90px;
+    }
+    .delete_all{
+        margin-top: 13px;
+    }
+}
